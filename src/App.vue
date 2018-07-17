@@ -1,60 +1,58 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <ArticleList></ArticleList>
+  <Comment></Comment>
+  <Commenteditor></Commenteditor>
+  <Pagination></Pagination>
+  <PostArticle></PostArticle>
+  <TheHeader></TheHeader>
+  <TheFooter></TheFooter>
+  <VTag></VTag>
+
   </div>
 </template>
-
+<!-- <script src="https://unpkg.com/vue@2.3.3"></script> -->
 <script>
+// 각각의 파일내용을 다 불러와서 담는다
+import ArticleList from './components/ArticleList.vue';
+import TheHeader from './components/TheHeader.vue';
+import TheFooter from './components/TheFooter.vue';
+import Comment from './components/Comment.vue';
+import Commenteditor from './components/Commenteditor.vue';
+import PostArticle from './components/PostArticle.vue';
+import VTag from './components/VTag.vue';
+import Pagination from './components/Pagination.vue';
+
+// var my_cmp = {
+//   template: '<div>my component </div>'
+// };
+// new Vue({
+//   el:'',
+//   components:{
+//     // '컴포넌트 이름': 컴포넌트내용
+//
+//   }
+// });
+
+
+
+
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components:{
+    // 컴포넌트 태그명: 컴포넌트 내용
+    'TheHeader':TheHeader,
+    'TheFooter':TheFooter,
+    'ArticleList':ArticleList,
+    'Comment':Comment,
+    'Commenteditor':Commenteditor,
+    'Pagination':Pagination,
+    'VTag':VTag,
+    'PostArticle':PostArticle,
+
   }
+
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+<style>
 </style>
